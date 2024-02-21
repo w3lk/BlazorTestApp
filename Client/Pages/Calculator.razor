@@ -1,0 +1,57 @@
+﻿@page "/calculator"
+
+<PageTitle>Calculator</PageTitle>
+
+<h1>Calculator</h1>
+
+<p role="status">This is a simple calculator example.</p>
+
+<InputNumber @bind-Value="valueA" />
+<InputSelect @bind-Value="operation">
+    <option value="+"> + </option>
+    <option value="-"> - </option>
+    <option value="*"> * </option>
+    <option value="/"> / </option>
+    <option value="^"> ^ </option>
+</InputSelect>
+<InputNumber @bind-Value="valueB" />
+
+<span>= @result</span>
+<hr />
+
+
+@code {
+    private double valueA = 0;
+    private double valueB = 0;
+    private double result => DoCalculate();
+
+
+
+    private string operation = "+";
+
+
+    private double DoCalculate()
+    {
+        if (operation == "+")
+        {
+            return valueA + valueB;
+        }
+        else if (operation == "-")
+        {
+            return valueA - valueB;
+        }
+        else if (operation == "*")
+        {
+            return valueA * valueB;
+        }
+        else if (operation == "/")
+        {
+            return valueA / valueB;
+        }
+        else if(operation == "^")
+        {
+            return Math.Pow(valueA, valueB);
+        }
+        return 0;
+    }
+}
