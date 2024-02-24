@@ -1,0 +1,5 @@
+﻿@media (hover: none) {
+    button:hover, .mud-button-root:hover, .mud-primary-hover:hover, .mud-button-root.mud-icon-button:hover {
+        color: var(--mud-palette-primary-text) transition: none !important;
+    }
+}

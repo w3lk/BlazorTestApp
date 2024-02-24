@@ -10,7 +10,7 @@
         <MudText Typo="Typo.h5" Class="ml-3"> My Application</MudText>
         <MudSpacer />
         <MudIconButton Icon="@Icons.Material.Filled.Settings" OnClick="@((e) => OpenThemeManager(true))" />
-        <MudIconButton Icon="@Icons.Material.Filled.DarkMode" OnClick="@((e) => ToggleDarkMode())" />
+        <MudToggleIconButton Icon="@Icons.Material.Filled.DarkMode" ToggledIcon="@Icons.Material.Filled.LightMode" @bind-Toggled="@_isDarkMode" />
     </MudAppBar>
     <MudDrawer @bind-Open="@_drawerOpen" ClipMode="_themeManager.DrawerClipMode" Elevation="_themeManager.DrawerElevation">
         <MyNavMenu />
@@ -69,9 +69,6 @@
     }
 
     private bool _isDarkMode;
-    private void ToggleDarkMode()
-    {
-        _isDarkMode = !_isDarkMode;
-    }
+    
 
 }
